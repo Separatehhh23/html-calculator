@@ -1,149 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Calculator</title>
-	<link rel="icon" type="image/x-icon" href="./icon.ico">
-    <style>
-		body {
-			font-family: Arial, sans-serif;
-		}
-		
-		.calculator {
-			width: 300px;
-			background-color: #f2f2f2;
-			margin: 0 auto;
-			padding: 20px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-		}
-		
-		.screen {
-			background-color: #fff;
-			padding: 10px;
-			margin-bottom: 10px;
-		}
-		
-		.screen input {
-			width: 100%;
-			border: none;
-			font-size: 24px;
-			text-align: right;
-		}
-		
-		.buttons button {
-			width: 50px;
-			height: 50px;
-			background-color: #fff;
-			color: #333;
-			border: none;
-			font-size: 18px;
-			margin-right: 5px;
-			margin-bottom: 5px;
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-			cursor: pointer;
-		}
-		
-		.buttons button:hover {
-			background-color: #f2f2f2;
-		}
-		
-		.buttons button:active {
-			box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-		}
-		
-		#clear,
-		#backspace {
-			background-color: #f44336;
-			color: #fff;
-		}
-		
-		#equals {
-			background-color: #4caf50;
-			color: #fff;
-			grid-column: 4;
-			grid-row: 4;
-		}
-		
-		#zero {
-			grid-column: 1/3;
-		}
-		
-		#decimal {
-			background-color: #333;
-			color: #fff;
-		}
-		
-		#decimal:hover {
-			background-color: #666;
-		}
-	</style>
-</head>
-<body>
-	<div class="calculator">
-		<div class="screen">
-			<input type="text" id="result" disabled>
-		</div>
-		<div class="buttons">
-			<button id="nine">9</button>
-			<button id="eight">8</button>
-			<button id="seven">7</button>
-			<button id="multiply">*</button>
-			<button id="divide">/</button>
-			<button id="six">6</button>
-			<button id="five">5</button>
-			<button id="four">4</button>
-			<button id="add">+</button>
-			<button id="subtract">-</button>
-			<button id="three">3</button>
-			<button id="two">2</button>
-			<button id="one">1</button>
-			<button id="clear">C</button>
-			<button id="backspace">&larr;</button>	
-			<button id="equals">=</button>
-			<button id="zero">0</button>
-			<button id="decimal">.</button>
-		</div>
-	</div>
-    <script>
-		let result = document.getElementById("result");
-
-		function clearScreen() {
-			result.value = "";
-		}
-
-		function backspace() {
-			result.value = result.value.slice(0, -1);
-		}
-
-		function calculate() {
-			try {
-				result.value = eval(result.value);
-			} catch (error) {
-				result.value = "Error";
+	<head>
+		<title>Calculator</title>
+		<link rel="icon" type="image/x-icon" href="./icon.ico">
+		<style>
+			body {
+				font-family: Arial, sans-serif;
 			}
-		}
+			
+			.calculator {
+				width: 300px;
+				background-color: #f2f2f2;
+				margin: 0 auto;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			}
+			
+			.screen {
+				background-color: #fff;
+				padding: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.screen input {
+				width: 100%;
+				border: none;
+				font-size: 24px;
+				text-align: right;
+			}
+			
+			.buttons button {
+				width: 50px;
+				height: 50px;
+				background-color: #fff;
+				color: #333;
+				border: none;
+				font-size: 18px;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+				cursor: pointer;
+			}
+			
+			.buttons button:hover {
+				background-color: #f2f2f2;
+			}
+			
+			.buttons button:active {
+				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+			}
+			
+			#clear,
+			#backspace {
+				background-color: #f44336;
+				color: #fff;
+			}
+			
+			#equals {
+				background-color: #4caf50;
+				color: #fff;
+				grid-column: 4;
+				grid-row: 4;
+			}
+			
+			#zero {
+				grid-column: 1/3;
+			}
+			
+			#decimal {
+				background-color: #333;
+				color: #fff;
+			}
+			
+			#decimal:hover {
+				background-color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calculator">
+			<div class="screen">
+				<input type="text" id="result" disabled>
+			</div>
+			<div class="buttons">
+				<button id="nine">9</button>
+				<button id="eight">8</button>
+				<button id="seven">7</button>
+				<button id="multiply">*</button>
+				<button id="divide">/</button>
+				<button id="six">6</button>
+				<button id="five">5</button>
+				<button id="four">4</button>
+				<button id="add">+</button>
+				<button id="subtract">-</button>
+				<button id="three">3</button>
+				<button id="two">2</button>
+				<button id="one">1</button>
+				<button id="clear">C</button>
+				<button id="backspace">&larr;</button>	
+				<button id="equals">=</button>
+				<button id="zero">0</button>
+				<button id="decimal">.</button>
+			</div>
+		</div>
+		<script>
+			let result = document.getElementById("result");
 
-		function appendValue(value) {
-			result.value += value;
-		}
+			function clearScreen() {
+				result.value = "";
+			}
 
-		document.getElementById("clear").addEventListener("click", clearScreen);
-		document.getElementById("backspace").addEventListener("click", backspace);
-		document.getElementById("divide").addEventListener("click", function() { appendValue("/") });
-		document.getElementById("multiply").addEventListener("click", function() { appendValue("*") });
-		document.getElementById("add").addEventListener("click", function() { appendValue("+") });
-		document.getElementById("subtract").addEventListener("click", function() { appendValue("-") });
-		document.getElementById("equals").addEventListener("click", calculate);
-		document.getElementById("zero").addEventListener("click", function() { appendValue("0") });
-		document.getElementById("one").addEventListener("click", function() { appendValue("1") });
-		document.getElementById("two").addEventListener("click", function() { appendValue("2") });
-		document.getElementById("three").addEventListener("click", function() { appendValue("3") });
-		document.getElementById("four").addEventListener("click", function() { appendValue("4") });
-		document.getElementById("five").addEventListener("click", function() { appendValue("5") });
-		document.getElementById("six").addEventListener("click", function() { appendValue("6") });
-		document.getElementById("seven").addEventListener("click", function() { appendValue("7") });
-		document.getElementById("eight").addEventListener("click", function() { appendValue("8") });
-		document.getElementById("nine").addEventListener("click", function() { appendValue("9") });
-		document.getElementById("decimal").addEventListener("click", function() { appendValue(".") });
-	</script>
-</body>
+			function backspace() {
+				result.value = result.value.slice(0, -1);
+			}
+
+			function calculate() {
+				try {
+					result.value = eval(result.value);
+				} catch (error) {
+					result.value = "Error";
+				}
+			}
+
+			function appendValue(value) {
+				result.value += value;
+			}
+
+			document.getElementById("clear").addEventListener("click", clearScreen);
+			document.getElementById("backspace").addEventListener("click", backspace);
+			document.getElementById("divide").addEventListener("click", function() { appendValue("/") });
+			document.getElementById("multiply").addEventListener("click", function() { appendValue("*") });
+			document.getElementById("add").addEventListener("click", function() { appendValue("+") });
+			document.getElementById("subtract").addEventListener("click", function() { appendValue("-") });
+			document.getElementById("equals").addEventListener("click", calculate);
+			document.getElementById("zero").addEventListener("click", function() { appendValue("0") });
+			document.getElementById("one").addEventListener("click", function() { appendValue("1") });
+			document.getElementById("two").addEventListener("click", function() { appendValue("2") });
+			document.getElementById("three").addEventListener("click", function() { appendValue("3") });
+			document.getElementById("four").addEventListener("click", function() { appendValue("4") });
+			document.getElementById("five").addEventListener("click", function() { appendValue("5") });
+			document.getElementById("six").addEventListener("click", function() { appendValue("6") });
+			document.getElementById("seven").addEventListener("click", function() { appendValue("7") });
+			document.getElementById("eight").addEventListener("click", function() { appendValue("8") });
+			document.getElementById("nine").addEventListener("click", function() { appendValue("9") });
+			document.getElementById("decimal").addEventListener("click", function() { appendValue(".") });
+		</script>
+	</body>
 </html>
